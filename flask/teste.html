@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" >
+    <title>Jogoteca</title>
+</head>
+<body>
+    <div class="container">
+      <div class="page-header bg-success">
+            
+        <div class="jumbotron jumbotron-fluid">
+              <h1 class="display-4">{{ titulo }}</h1>
+              <p class="lead">Sua lista de games.</p>
+              <a href="/novo">
+                <button class="btn btn-primary">Novo</button>
+              </a>
+          </div>
+      </div>
+      <form>
+        <fieldset>
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <input type="text" id="categoria" name="categoria" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="console">Console</label>
+            <input type="text" id="console" name="console" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+          <a href="/"> <button class="btn btn-warning">Voltar</button> </a>
+        </fieldset>
+      </form>
+    </div>
+</body>
+</html>
