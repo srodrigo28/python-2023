@@ -79,6 +79,7 @@ jogos = [
     ('God Of War 2', 'Luta', 'PS2')
 ]
 cursor.executemany(jogos_sql, jogos)
+
 print('--------------------- Jogos: ---------------------')
 for jogo in cursor.fetchall():
     print(jogo[1])
