@@ -7,7 +7,7 @@ pip install flask
 
 * ultimo visto
 ```
-https://cursos.alura.com.br/course/flask-crie-webapp-python/task/102419
+https://cursos.alura.com.br/course/flask-desenvolvimento-web
 ```
 
 ### Criando virtual envi

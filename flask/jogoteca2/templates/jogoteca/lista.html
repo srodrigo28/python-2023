@@ -1,0 +1,36 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <div class="page-header bg-success">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4">{{ titulo }}</h1>
+              <p class="lead">Sua lista de games.</p>
+              <a href="/jogoteca/novo">
+                <button class="btn btn-primary">Novo</button>
+              </a>
+            </div>
+          </div>
+    </div>
+    <table class="table table-striped table-responsive table-bordered">
+        <thead class="thead-default">
+            <tr>
+                <th>Nome</th>
+                <th>Categoria</th>
+                <th>Console</th>
+                <th class="text-center">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr {% for jogo in jogos %}>
+                <td> {{ jogo.nome }} </td>
+                <td> {{ jogo.categoria }} </td>
+                <td> {{ jogo.console }} </td>
+                <td class="text-center">
+                    <a class="btn btn-warning" href={{"editar"}}>Editar</a>
+                    <a class="btn btn-danger" href="" id="excluir">Excluir</a>
+                </td>
+            </tr {% endfor %}>
+        </tbody>
+    </table>
+    
+{% endblock %}
