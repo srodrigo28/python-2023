@@ -1,7 +1,12 @@
 ## Criando primeiro Projeto Python Django
-
+* Django 1 passo
 ```
 pip install django
+```
+
+* Django 2 passo
+```
+django-admin startproject fundamentos
 ```
 django-admin startproject django_basico
 
@@ -33,4 +38,11 @@ https://cursos.alura.com.br/formacao-django
 * Formação Compelta
 ```
 https://cursos.alura.com.br/formacao-flask
+```
+
+### Importante
+
+* Ver dependências
+```
+pip freeze
 ```
