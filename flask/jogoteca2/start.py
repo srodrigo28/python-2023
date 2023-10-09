@@ -3,37 +3,10 @@ from flask import Flask, render_template, request, redirect, session, flash, url
 # from flask_sqlalchemy import SQLAlchemy
 from flask_sqlalchemy import SQLAlchemy
 
-class Jogo:
-    def __init__(self, nome, categoria, console):
-        self.nome = nome
-        self.categoria = categoria
-        self.console = console
-
-jogo1 = Jogo('Tetris', 'Puzzle', 'Atari')
-jogo2 = Jogo('God Of War 2', 'Rack new Slash', 'PS2')
-jogo3 = Jogo('God Of War     3', 'Rack new Slash', 'PS3')
-    
-lista = [jogo1, jogo2, jogo3]
-
-class Usuario:
-    def __init__(self, name, nickname, senha):
-        self.nome = name
-        self.nickname = nickname
-        self.senha = senha
-        
-usuario1 = Usuario('Bastiao', 'sb', '123')
-usuario2 = Usuario('Camila',  'cm', '123')
-usuario3 = Usuario('Matheus', 'mt', '123')
-
-usuarios = { usuario1.nickname : usuario1,  
-             usuario2.nickname : usuario2,  
-             usuario3.nickname : usuario3 }
+###
 
 app = Flask(__name__)
 app.secret_key = 'alura'
-
-# db = SQLAlchemy(app)
-
 
 app.config['SQLALCHEMY_DATABASE_URI'] = \
     '{SGBD}://{usuario}:{senha}@{servidor}/{database}'.format( 
@@ -41,7 +14,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = \
         usuario='root', 
         senha='', 
         servidor='localhost', 
-        database='jogoteca'
+        database='jogoteca2'
     )
 
 db=SQLAlchemy(app)
@@ -70,7 +43,9 @@ def home():
 
 @app.route('/jogoteca/lista')
 def jogoteca_index(): 
-    return render_template('jogoteca/lista.html', titulo='Jogos 2023', jogos = lista)
+    lista = Jogos.query.order_by(Jogos.id)
+    print(lista)
+    return render_template('jogoteca/lista.html', titulo='Jogos 2023', jogos=lista)
 
 @app.route('/jogoteca/novo')
 def jogoteca_novo(): 

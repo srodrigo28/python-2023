@@ -40,7 +40,7 @@ TABLES['Usuarios'] = ('''
         `nickname` VARCHAR(8) NOT NULL,
         `senha` VARCHAR(100) NOT NULL,
         PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin; ''')
+    )''')
 
 for table_nome in TABLES:
     tabela_sql = TABLES[table_nome]
